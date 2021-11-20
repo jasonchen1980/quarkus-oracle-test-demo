@@ -65,6 +65,11 @@
       <artifactId>kotlin-extensions</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- curl http://localhost:8080/q/openapi-->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>io.quarkus</groupId>
