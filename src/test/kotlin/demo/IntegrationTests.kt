@@ -1,6 +1,7 @@
 package demo
 
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.BeforeAll
 import org.testcontainers.containers.OracleContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
@@ -37,10 +38,11 @@ class IntegrationTests {
 
     companion object {
         @Container
-        val container = OracleContainer("store/oracle/database-enterprise:12.2.0.1")
+        val container = OracleContainer("gvenzl/oracle-xe")
             .withDatabaseName("quarkus_test")
-            .withUsername("user")
-            .withPassword("password")
+            .withEnv("test", "Str0ngPassw0rd")
+            //.withUsername("user")
+            .withPassword("Str0ngPassw0rd")
             .withInitScript("sql/schema.sql")
     }
 
